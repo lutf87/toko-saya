@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,11 +45,20 @@ Route::controller(DashboardController::class)->group(function () {
 Route::group(['prefix'=>'/admin'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.admin');
 
-    //route::group admin
+    //route::group kategori
     Route::group(['prefix'=>'/kategori'], function(){
         Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
         Route::get('/create', [KategoriController::class, 'create'])->name('kategori.create');
+        Route::get('/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
 
+    });
+
+    //route::group produk
+    Route::group(['prefix'=>'/produk'], function(){
+        Route::get('/', [ProdukController::class, 'index'])->name('produk.index');
+        Route::get('/create', [ProdukController::class, 'create'])->name('produk.create');
+        Route::get('/show', [ProdukController::class, 'show'])->name('produk.show');
+        Route::get('/edit', [ProdukController::class, 'edit'])->name('produk.edit');
     });
 
     Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');

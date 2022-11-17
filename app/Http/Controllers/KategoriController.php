@@ -8,7 +8,7 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $title = "kategori Produk";
+        $title = "Kategori Produk";
         return view('kategori.index', compact('title'));
     }
 
@@ -16,5 +16,31 @@ class KategoriController extends Controller
     {
         $title = "Form kategori";
         return view('kategori.create', compact('title'));
+    }
+
+    public function store(Request $request)
+    {
+        # code...
+    }
+
+    public function show($id)
+    {
+        # code...
+    }
+
+    public function edit()
+    {
+        $title = "Form Edit Kategori";
+        return view('kategori.edit', compact('title','id'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        # code...
+    }
+
+    public function destroy($id)
+    {
+        # code...
     }
 }

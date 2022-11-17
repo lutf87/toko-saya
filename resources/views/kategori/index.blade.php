@@ -6,16 +6,19 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Produk</h4>
-                        <div class="card-tools">
+                        {{-- <div class="card-tools">
                             <a href="{{ route('kategori.create') }}" class="btn btn-sm btn-primary">
                                 Baru
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="card-body">
                         <form action="#">
                             <div class="row">
                                 <div class="col">
+                                    <a href="{{ route('kategori.create') }}" class="btn btn-primary">Tambah Produk</a>
+                                </div>
+                                <div class="col-auto">
                                     <input type="text" name="keyword" id="keyword" class="form-control"
                                         placeholder="ketik keyword disini">
                                 </div>
@@ -59,7 +62,7 @@
                                         <td>Rendang</td>
                                         <td>8 Produk</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
+                                            <a href="{{ route('kategori.edit', 1) }}" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
                                             <button class="btn btn-sm btn-danger mb-2">Hapus</button>
                                         </td>
                                     </tr>
@@ -81,7 +84,7 @@
                                         <td>Mie Ayam</td>
                                         <td>3 Produk</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
+                                            <a href="{{ route('kategori.edit', 2) }}" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
                                             <button class="btn btn-sm btn-danger mb-2">Hapus</button>
                                         </td>
                                     </tr>
@@ -102,7 +105,7 @@
                                         <td>Soto</td>
                                         <td>9 Produk</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
+                                            <a href="{{ route('kategori.edit', 3) }}" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
                                             <button class="btn btn-sm btn-danger mb-2">Hapus</button>
                                         </td>
                                     </tr>

@@ -5,10 +5,7 @@
             <div class="col col-lg-12 col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Form Kategori</h3>
-                        {{-- <div class="card-tools">
-                            <a href="{{ route('kategori.index') }}" class="btn btn-sm btn-danger">Tutup</a>
-                        </div> --}}
+                        <h3 class="card-title">Form Edit Kategori</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -32,7 +29,7 @@
                                 <textarea name="deskripsi" id="deskripsi" cols="30" rows="5" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                                 <button type="reset" class="btn btn-warning">Reset</button>
                             </div>
                         </form>
