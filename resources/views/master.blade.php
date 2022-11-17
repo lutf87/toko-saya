@@ -5,106 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @include('items.stylesheet')
+    @include('master-items.stylesheet')
 
 </head>
 
-<body class="sb-nav-fixed">
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
 
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        {{-- navbar brand --}}
-        <a class="navbar-brand ps-3" href="#">Toko Saya</a>
-        {{-- sidebar toggle --}}
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
-          <i class="fas fa-bars"></i>
-        </button>
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="{{ asset('AdminLTE-3.2.0/dist/img/AdminLTELogo.png') }}"
+                alt="AdminLTELogo" height="60" width="60">
+        </div>
 
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-            <div class="input-group">
-                {{-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> --}}
-                {{-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> --}}
+        <!-- Navbar -->
+        @include('master-items.navbar')
+        <!-- /.navbar -->
+
+        {{-- Main Sidebar Content --}}
+        @include('master-items.dashboard-menu')
+        </aside>
+        {{-- Main Sidebar Content --}}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">{{ $title }}</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Starter Page</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
-        </form>
-        <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <div id="layoutSidenav">
-      <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-          <div class="sb-sidenav-menu">
-            <div class="nav">
-              <div class="sb-sidenav-menu-heading">Core</div>
-              <a class="nav-link" href="{{ route('dashboard.admin') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Dashboard
-              </a>
-              <a class="nav-link" href="{{ route('kategori.index') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
-                Kategori
-              </a>
-              <a class="nav-link" href="{{ route('admin.transaksi') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
-                Transaksi
-              </a>
-              <a class="nav-link" href="{{ route('admin.laporan') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                Laporan
-              </a>
-              <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
-                Logout
-              </a>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                @yield('content')
             </div>
-          </div>
-        </nav>
-      </div>
-      <div id="layoutSidenav_content">
-        <main>
-          <div class="container-fluid px-4">
-            <h1 class="mt-4">{{ $title }}</h1>
-            <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active"></li>
-              @yield('content')
-            </ol>
-          </div>
-        </main>
-        <footer class="py-4 bg-light mt-auto">
-          <div class="container-fluid px-4">
-            <div class="d-flex align-items-center justify-content justify-content-between small">
-              <div class="text-muted">Copyright &copy; toko Saya 2022</div>
-              <div>
-                <a href="#">Privacy policy</a>
-                &middot;
-                <a href="#">Terms &amp; Comnditions</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        {{-- main footer --}}
+        @include('master-items.footer')
+        {{-- main footer --}}
+
     </div>
+    {{-- wrapper --}}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('dashboard/js/scripts.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('dashboard/assets/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/demo/chart-bar-demo.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="{{ asset('dashboard/js/datatables-simple-demo.js') }}"></script>
+    {{-- scripts --}}
+    @include('master-items.javascript')
+    {{-- scripts --}}
+
 </body>
 
 </html>
