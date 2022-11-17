@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +29,7 @@ Route::get('/', function () {
 // Route::get('/kontak', [PageController::class, 'kontak']);
 // Route::get('/about', [PageController::class, 'about']);
 
-
+/*
 Route::get('/index', [DashboardController::class, 'index']);
 
 Route::controller(DashboardController::class)->group(function () {
@@ -35,6 +38,21 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/kategori', 'kategori');
     Route::get('/kontak', 'kontak');
     Route::get('/about', 'about');
+});
+*/
+
+Route::group(['prefix'=>'/admin'], function(){
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.admin');
+
+    //route::group admin
+    Route::group(['prefix'=>'/kategori'], function(){
+        Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
+        Route::get('/create', [KategoriController::class, 'create'])->name('kategori.create');
+
+    });
+
+    Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
 });
 
 // Route::prefix('admin')->group(function () {

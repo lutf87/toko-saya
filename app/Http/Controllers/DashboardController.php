@@ -12,6 +12,7 @@ class DashboardController extends Controller
         return view('dashboard.index', compact('title'));
     }
 
+    /*
     public function home()
     {
         $title = 'Home';
@@ -35,4 +36,5 @@ class DashboardController extends Controller
         $title = 'About';
         return view('layouts.about', compact('title'));
     }
+    */
 }
