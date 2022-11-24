@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,8 +63,25 @@ Route::group(['prefix'=>'/admin'], function(){
         Route::get('/edit', [ProdukController::class, 'edit'])->name('produk.edit');
     });
 
-    Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
-    Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
+    //route::group customer
+    Route::group(['prefix'=>'/customer'], function(){
+        Route::get('/', [CustomerController::class, 'index'])->name('customer.index');
+        Route::get('/edit', [CustomerController::class, 'edit'])->name('customer.edit');
+    });
+
+    //route::group transaksi
+    Route::group(['prefix'=>'/transaksi'], function(){
+        Route::get('/', [TransaksiController::class, 'index'])->name('transaksi.index');
+        Route::get('/edit', [TransaksiController::class, 'edit'])->name('transaksi.edit');
+        Route::get('/show', [TransaksiController::class, 'show'])->name('transaksi.show');
+    });
+
+    //route::group user
+    Route::group(['prefix'=>'/profile'], function(){
+        Route::get('/', [UserController::class, 'index'])->name('profile.index');
+        Route::get('/setting', [UserController::class, 'setting'])->name('profile.setting');
+    });
+
 });
 
 // Route::prefix('admin')->group(function () {

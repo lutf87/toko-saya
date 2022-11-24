@@ -2,10 +2,33 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <div class="card">
+            <div class="col col-lg-4 col-md-4">
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img src="{{ asset('AdminLTE-3.2.0/dist/img/user2-160x160.jpg') }}" alt="profil"
+                                class="profile-user-img img-responsive img-circle">
+                        </div>
+                        <h3 class="profile-username text-center">Fadlur Rohman</h3>
+                        <p class="text-muted text-center">Member sejak : 20 Des 2020</p>
+                        <hr>
+                        <strong><i class="fas fa-map-marker mr-2"></i>Alamat</strong>
+                        <p class="text-muted">Jekulo, Kab Kudus</p>
+                        <hr>
+                        <strong><i class="fas fa-envelope mr-2"></i>Email</strong>
+                        <p class="text-muted">f4dlur@gmail.com</p>
+                        <hr>
+                        <strong><i class="fas fa-phone mr-2"></i>No Tlp</strong>
+                        <p class="text-muted">Jekulo, Kab Kudus</p>
+                        <hr>
+                        <a href="{{ route('profile.setting') }}" class="btn btn-primary btn-block">Setting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-8 col-md-8">
+                <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Data Transaksi</h3>
+                        <h3 class="card-title">History Transaksi</h3>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -36,8 +59,6 @@
                                         <td>
                                             <a href="{{ route('transaksi.show', 1) }}"
                                                 class="btn btn-sm btn-info mb-2">Detail</a>
-                                            <a href="{{ route('transaksi.edit', 1) }}"
-                                                class="btn btn-sm btn-primary mb-2">Edit</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -52,8 +73,6 @@
                                         <td>
                                             <a href="{{ route('transaksi.show', 2) }}"
                                                 class="btn btn-sm btn-info mb-2">Detail</a>
-                                            <a href="{{ route('transaksi.edit', 2) }}"
-                                                class="btn btn-sm btn-primary mb-2">Edit</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -68,8 +87,6 @@
                                         <td>
                                             <a href="{{ route('transaksi.show', 3) }}"
                                                 class="btn btn-sm btn-info mb-2">Detail</a>
-                                            <a href="{{ route('transaksi.edit', 3) }}"
-                                                class="btn btn-sm btn-primary mb-2">Edit</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -84,8 +101,6 @@
                                         <td>
                                             <a href="{{ route('transaksi.show', 4) }}"
                                                 class="btn btn-sm btn-info mb-2">Detail</a>
-                                            <a href="{{ route('transaksi.edit', 4) }}"
-                                                class="btn btn-sm btn-primary mb-2">Edit</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -100,8 +115,6 @@
                                         <td>
                                             <a href="{{ route('transaksi.show', 5) }}"
                                                 class="btn btn-sm btn-info mb-2">Detail</a>
-                                            <a href="{{ route('transaksi.edit', 5) }}"
-                                                class="btn btn-sm btn-primary mb-2">Edit</a>
                                         </td>
                                     </tr>
                                 </tbody>

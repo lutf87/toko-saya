@@ -31,7 +31,7 @@ class KategoriController extends Controller
     public function edit()
     {
         $title = "Form Edit Kategori";
-        return view('kategori.edit', compact('title','id'));
+        return view('kategori.edit', compact('title'));
     }
 
     public function update(Request $request, $id)

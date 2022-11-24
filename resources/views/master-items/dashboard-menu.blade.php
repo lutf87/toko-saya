@@ -66,7 +66,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#html" class="nav-link">
+                            <a href="{{ route('transaksi.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Transaksi</p>
                             </a>
@@ -82,7 +82,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('customer.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Customer</p>
                             </a>
@@ -106,7 +106,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('profile.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Profil</p>
                     </a>

@@ -80,7 +80,7 @@
                                         <td>Mie Ayam</td>
                                         <td>3 Produk</td>
                                         <td>
-                                            <a href="{{ route('produk.show', 2) }}" class="btn btn-sm btn-primary mr-2 mb-2">Detail</a>
+                                            <a href="{{ route('produk.show', 1) }}" class="btn btn-sm btn-primary mr-2 mb-2">Detail</a>
                                             <a href="{{ route('produk.edit', 2) }}" class="btn btn-sm btn-primary mr-2 mb-2">Edit</a>
                                             <button class="btn btn-sm btn-danger mb-2">Hapus</button>
                                         </td>
