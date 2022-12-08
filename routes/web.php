@@ -82,6 +82,12 @@ Route::group(['prefix'=>'/admin'], function(){
         Route::get('/setting', [UserController::class, 'setting'])->name('profile.setting');
     });
 
+    //route::group laporan
+    Route::group(['prefix'=>'/laporan'], function(){
+        Route::get('/', [LaporanController::class, 'index'])->name('laporan.index');
+        Route::get('/proses', [LaporanController::class, 'proses'])->name('laporan.proses');
+    });
+
 });
 
 // Route::prefix('admin')->group(function () {
