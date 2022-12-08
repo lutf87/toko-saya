@@ -93,3 +93,7 @@ Route::group(['prefix'=>'/admin'], function(){
 // Route::prefix('admin')->group(function () {
 //     Route::get('/index', [DashboardController::class, 'index']);
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
